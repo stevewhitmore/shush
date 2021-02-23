@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css"/>
+  <title>Shush: Drown Out Distractions</title>
+</head>
+<body>
+
+  <button type="button" class="visible" onclick="playSound()">Play</button>
+  <button type="button" onclick="pauseSound()">Pause</button>
+  <button type="button" onclick="volumeUp()">volume up</button>
+  <button type="button" onclick="volumeDown()">volume down</button>
+
+  <audio id="thunder-audio" controls loop>
+    <source src="thunder.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="rain-audio" controls loop>
+    <source src="rain.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const thunderAudio = document.querySelector('#thunder-audio');
+    const rainAudio = document.querySelector('#rain-audio');
+
+    function volumeUp() {
+      thunderAudio.volume = thunderAudio.volume + (1 / 10);
+      console.log(thunderAudio.volume);
+    }
+
+    function volumeDown() {
+      thunderAudio.volume = thunderAudio.volume - (1 / 10);
+      console.log(thunderAudio.volume);
+    }
+
+    function playSound() {
+        thunderAudio.volume = 0.3;
+        rainAudio.volume = 0.6;
+        thunderAudio.play();
+        //rainAudio.play();
+        toggleVisible();
+        console.log(thunderAudio.volume)
+    }
+
+    function pauseSound() {
+      thunderAudio.pause();
+      rainAudio.pause();
+      toggleVisible();
+    }
+
+    function toggleVisible() {
+      const buttons = document.querySelectorAll('button');
+
+      buttons.forEach(b => {
+        b.classList.toggle('visible');
+      })
+    }
+
+  </script>
+  
+</body>
+</html>

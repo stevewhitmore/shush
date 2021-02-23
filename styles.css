@@ -1,0 +1,17 @@
+body {
+  display: grid;
+  min-height: 100%;
+  /* background-color: #2b2b2b; */
+}
+
+audio {
+  display: none;
+}
+
+button {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
