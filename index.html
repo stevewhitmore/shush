@@ -9,10 +9,18 @@
 </head>
 <body>
 
-  <button type="button" class="visible" onclick="playSound()">Play</button>
-  <button type="button" onclick="pauseSound()">Pause</button>
-  <button type="button" onclick="volumeUp()">volume up</button>
-  <button type="button" onclick="volumeDown()">volume down</button>
+  <button type="button" class="visible" onclick="playSound()">
+    <svg viewBox="0 0 24 24">
+      <path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+    </svg>
+  </button>
+  <button type="button" onclick="pauseSound()">
+    <svg viewBox="0 0 24 24">
+      <path fill="currentColor" d="M14,19H18V5H14M6,19H10V5H6V19Z" />
+    </svg>
+  </button>
+  <!-- <button type="button" onclick="volumeUp()">volume up</button>
+  <button type="button" onclick="volumeDown()">volume down</button> -->
 
   <audio id="thunder-audio" controls loop>
     <source src="thunder.mp3" type="audio/mpeg">
@@ -27,21 +35,21 @@
     const thunderAudio = document.querySelector('#thunder-audio');
     const rainAudio = document.querySelector('#rain-audio');
 
-    function volumeUp() {
-      thunderAudio.volume = thunderAudio.volume + (1 / 10);
-      console.log(thunderAudio.volume);
-    }
+    // function volumeUp() {
+    //   thunderAudio.volume = thunderAudio.volume + (1 / 10);
+    //   console.log(thunderAudio.volume);
+    // }
 
-    function volumeDown() {
-      thunderAudio.volume = thunderAudio.volume - (1 / 10);
-      console.log(thunderAudio.volume);
-    }
+    // function volumeDown() {
+    //   thunderAudio.volume = thunderAudio.volume - (1 / 10);
+    //   console.log(thunderAudio.volume);
+    // }
 
     function playSound() {
         thunderAudio.volume = 0.3;
         rainAudio.volume = 0.6;
         thunderAudio.play();
-        //rainAudio.play();
+        rainAudio.play();
         toggleVisible();
         console.log(thunderAudio.volume)
     }
