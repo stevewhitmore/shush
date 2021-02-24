@@ -9,18 +9,18 @@
 </head>
 <body>
 
-  <button type="button" class="visible" onclick="playSound()">
+  <button type="button" class="visible" id="play">
     <svg viewBox="0 0 24 24">
       <path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
     </svg>
   </button>
-  <button type="button" onclick="pauseSound()">
+  <button type="button" id="pause">
     <svg viewBox="0 0 24 24">
       <path fill="currentColor" d="M14,19H18V5H14M6,19H10V5H6V19Z" />
     </svg>
   </button>
 
-  <audio id="storm-audio" controls loop>
+  <audio id="storm" controls loop>
     <source src="storm.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
