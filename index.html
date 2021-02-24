@@ -19,56 +19,13 @@
       <path fill="currentColor" d="M14,19H18V5H14M6,19H10V5H6V19Z" />
     </svg>
   </button>
-  <!-- <button type="button" onclick="volumeUp()">volume up</button>
-  <button type="button" onclick="volumeDown()">volume down</button> -->
 
-  <audio id="thunder-audio" controls loop>
-    <source src="thunder.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-  <audio id="rain-audio" controls loop>
-    <source src="rain.mp3" type="audio/mpeg">
+  <audio id="storm-audio" controls loop>
+    <source src="storm.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
-  <script>
-    const thunderAudio = document.querySelector('#thunder-audio');
-    const rainAudio = document.querySelector('#rain-audio');
-
-    // function volumeUp() {
-    //   thunderAudio.volume = thunderAudio.volume + (1 / 10);
-    //   console.log(thunderAudio.volume);
-    // }
-
-    // function volumeDown() {
-    //   thunderAudio.volume = thunderAudio.volume - (1 / 10);
-    //   console.log(thunderAudio.volume);
-    // }
-
-    function playSound() {
-        thunderAudio.volume = 0.3;
-        rainAudio.volume = 0.6;
-        thunderAudio.play();
-        rainAudio.play();
-        toggleVisible();
-        console.log(thunderAudio.volume)
-    }
-
-    function pauseSound() {
-      thunderAudio.pause();
-      rainAudio.pause();
-      toggleVisible();
-    }
-
-    function toggleVisible() {
-      const buttons = document.querySelectorAll('button');
-
-      buttons.forEach(b => {
-        b.classList.toggle('visible');
-      })
-    }
-
-  </script>
+  <script src="./script.js"></script>
   
 </body>
 </html>
