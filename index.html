@@ -20,12 +20,27 @@
     </svg>
   </button>
 
-  <audio id="storm" controls loop>
-    <source src="storm.mp3" type="audio/mpeg">
+  <!-- <audio id="storm" controls loop>
+    <source src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/993000415&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"" type="audio/mpeg">
     Your browser does not support the audio element.
-  </audio>
+  </audio> -->
 
-  <script src="./script.js"></script>
+  <!-- <script src="./script.js"></script> -->
+
+<script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
+<script>
+SC.initialize({
+  client_id: '39614531'
+});
+
+SC.stream('/tracks/993076129').then(function(player){
+  player.play().then(function(){
+    console.log('Playback started!');
+  }).catch(function(e){
+    console.error('Playback rejected. Try calling play() from a user interaction.', e);
+  });
+});
+</script>
   
 </body>
 </html>
