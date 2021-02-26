@@ -2,6 +2,8 @@
 
 ## Drown Out Distractions
 
+> **This is still at the pre-release stage.** There are several issues to resolve before the first official release can happen. See [project issues](https://github.com/stevewhitmore/shush/issues) for details.
+
 A dead simple sound machine tuned to exactly the way I want it.
 
 URL: <https://stevewhitmore.github.io/shush/>
